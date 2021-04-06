@@ -10,8 +10,6 @@ CandidateList = []
 DistinctCandidateList = []
 NumberOfVotes = []
 Percentage = []
-FinalDist = dict()
-
 
 with open(csvpath) as cvsfile:
     csvreader = csv.reader(cvsfile, delimiter=',')
@@ -19,14 +17,14 @@ with open(csvpath) as cvsfile:
     #remove header
     header = next(csvreader)
 
-    #loop for each row to count number of months
+    #loop for each row to count number of Records and add Candidate to Candidatelist
     for row in csvreader:
         #Number of records counter
         Total = Total + 1
         #Add all records to list
         CandidateList.append(row[2])
     
-    #Run throught each 
+    #Run throught each Candidate
     for runningData  in set(CandidateList):
         #get Candidate
         DistinctCandidateList.append(runningData)
